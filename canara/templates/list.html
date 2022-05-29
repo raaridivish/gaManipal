@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        {% if not atm_list %}
+        <div>
+        <div class="text-center">
+            <br>
+            <h1 class="text-center my_title">List is empty</h1>
+            <br>
+        </div>
+    </div>
+        {% else %}
+        {% for i in atm_list %}
+        <div class="card" style=" margin:10px;">
+            <div class="card-body">
+                <h5 class="card-title">{{i.branch_name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{i.branch_code}}</h6>
+                <p class="card-text"></p>
+                <a class="card-link example-image-link" href="{{i.front_view.url}}" data-lightbox="example-set">Front View</a>
+                <a class="card-link example-image-link" href="{{i.back_view.url}}" data-lightbox="example-set">Back View</a>
+                <a class="card-link example-image-link" href="{{i.top_view.url}}" data-lightbox="example-set">Top View</a>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

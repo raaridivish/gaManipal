@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canara ATM</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="{% static 'lightbox.min.css' %}">
+</head>
+<body>
+<!-- Image and text -->
+<nav class="navbar navbar-dark bg-dark">
+    <ul class="nav">
+        <li class="nav-item">
+            <a aria-current="page" class="nav-link" href="{% url 'canapp:index' %}">Add</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'canapp:list' %}">List</a></li>
+    </ul>
+</nav>
+{% block body %}
+{% endblock %}
+<script src="{% static 'lightbox-plus-jquery.min.js' %}"></script>
+</body>
+</html>
